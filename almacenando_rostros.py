@@ -6,17 +6,17 @@ import datetime
 start_time = datetime.datetime.now()
 print(f'Iniciando el proceso: {start_time.strftime("%Y-%m-%d %H:%M:%S")}')
 
-personName = 'Ambar'
-dataPath = 'C:/imagenes_reconocimiento_facial/Data'
+personName = 'Cristian-15-12-2024'
+dataPath = 'recursos_reconocimiento_facial/Data'
 personPath = dataPath + '/' + personName
 
 if not os.path.exists(personPath):
     print('Carpeta creada: ', personPath)
     os.makedirs(personPath)
 
-# cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 # Descomentar para capturar registros de un video.
-cap = cv2.VideoCapture('C:/imagenes_reconocimiento_facial/Videos/'+personName+'.mp4')
+# cap = cv2.VideoCapture('C:/imagenes_reconocimiento_facial/Videos/'+personName+'.mp4')
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades +
                                     'haarcascade_frontalface_default.xml')
